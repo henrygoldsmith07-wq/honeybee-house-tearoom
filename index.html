@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://henrygoldsmith07-wq.github.io/honeybee-house-tearoom/og-image.png">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","@id":"https://henrygoldsmith07-wq.github.io/honeybee-house-tearoom/#tearoom","name":"Honeybee House Tearoom","description":"Family-run mother-and-daughter tearoom in Llanishen, Cardiff, serving breakfasts, lunches, homemade cakes and afternoon tea.","url":"https://henrygoldsmith07-wq.github.io/honeybee-house-tearoom/","image":"https://henrygoldsmith07-wq.github.io/honeybee-house-tearoom/og-image.png","telephone":"+442920755380","email":"hbhtearoom@gmail.com","servesCuisine":["British","Cafe","Afternoon tea"],"currenciesAccepted":"GBP","hasMap":"https://maps.google.com/?q=38+Station+Road+Llanishen+Cardiff+CF14+5LT","address":{"@type":"PostalAddress","streetAddress":"38 Station Road","addressLocality":"Llanishen","addressRegion":"Cardiff","postalCode":"CF14 5LT","addressCountry":"GB"},"areaServed":[{"@type":"Place","name":"Llanishen"},{"@type":"Place","name":"Cardiff"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday","Saturday"],"opens":"09:15","closes":"16:15"}],"acceptsReservations":"https://henrygoldsmith07-wq.github.io/honeybee-house-tearoom/#book","sameAs":["https://www.facebook.com/HBHtearoom","https://www.instagram.com/hbhtearoom/"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","@id":"https://henrygoldsmith07-wq.github.io/honeybee-house-tearoom/#tearoom","name":"Honeybee House Tearoom","description":"Family-run mother-and-daughter tearoom in Llanishen, Cardiff, serving breakfasts, lunches, homemade cakes and afternoon tea.","url":"https://henrygoldsmith07-wq.github.io/honeybee-house-tearoom/","image":"https://henrygoldsmith07-wq.github.io/honeybee-house-tearoom/og-image.png","telephone":"+442920755380","email":"hbhtearoom@gmail.com","servesCuisine":["British","Cafe","Afternoon tea"],"currenciesAccepted":"GBP","hasMap":"https://maps.google.com/?q=38+Station+Road+Llanishen+Cardiff+CF14+5LT","address":{"@type":"PostalAddress","streetAddress":"38 Station Road","addressLocality":"Llanishen","addressRegion":"Cardiff","postalCode":"CF14 5LT","addressCountry":"GB"},"areaServed":[{"@type":"Place","name":"Llanishen"},{"@type":"Place","name":"Cardiff"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday","Saturday"],"opens":"09:15","closes":"16:15"}],"acceptsReservations":"https://henrygoldsmith07-wq.github.io/honeybee-house-tearoom/#book","sameAs":["https://www.facebook.com/HBHtearoom","https://www.instagram.com/hbhtearoom/"],"geo":{"@type":"GeoCoordinates","latitude":51.529009,"longitude":-3.188265}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need to book for afternoon tea at Honeybee House?","acceptedAnswer":{"@type":"Answer","text":"Booking is the safe way to guarantee a table and a stand. Send a booking request from this page or ring 029 2075 5380, and the tearoom confirms the time and any notice they need for afternoon tea."}},{"@type":"Question","name":"When is Honeybee House open?","acceptedAnswer":{"@type":"Answer","text":"Wednesday to Saturday, 09:15 to 16:15. The tearoom is closed Sunday, Monday and Tuesday."}},{"@type":"Question","name":"Can you cater for dietary requirements?","acceptedAnswer":{"@type":"Answer","text":"Tell the tearoom when you book, using the dietary notes box, and they will confirm what they can do for your table."}},{"@type":"Question","name":"Where is the tearoom?","acceptedAnswer":{"@type":"Answer","text":"38 Station Road, Llanishen, Cardiff CF14 5LT — on the village parade, a short walk from Llanishen rail station."}}]}</script>
 
 <style>
@@ -263,7 +263,7 @@
     .menu h2, .menu-item .name { color: #000; }
   }
 </style>
-<meta name="robots" content="noindex, nofollow"></head>
+<meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="direction.css"><script src="direction.js" defer></script></head>
 <body class="has-bar">
 <a class="skip" href="#main">Skip to main content</a>
 
@@ -284,12 +284,12 @@
       </span>
     </a>
 
-    <nav class="head-nav" aria-label="Main">
+    <nav class="head-nav" aria-label="Main" id="main-nav">
       <a href="#story">Our story</a>
       <a href="#menu">The menu</a>
       <a href="#book">Book a table</a>
       <a href="#visit">Visit</a>
-    </nav>
+    </nav><button type="button" class="nav-toggle" aria-controls="main-nav" aria-expanded="false">Menu</button>
 
     <a class="btn btn-primary head-cta" href="#book">Book a table</a>
     <a class="btn btn-outline head-call" href="tel:+442920755380">Call</a>
@@ -299,72 +299,7 @@
 <main id="main">
   <div id="top"></div>
 
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <div>
-        <p class="eyebrow">38 Station Road · Llanishen</p>
-        <h1>Afternoon tea, <em>properly</em> done.</h1>
-        <p class="lede">A mother-and-daughter tearoom in the middle of Llanishen village. Breakfasts and lunches through the day, homemade cakes on the counter, and a proper afternoon tea when there's something to celebrate.</p>
-
-        <p class="status" id="status" aria-live="polite">
-          <span class="dot" aria-hidden="true"></span>
-          <span id="status-text">Checking today's hours…</span>
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#book">Book a table</a>
-          <a class="btn btn-outline" href="tel:+442920755380">Call 029 2075 5380</a>
-        </div>
-      </div>
-
-      <div class="hero-art">
-        <svg viewBox="0 0 420 440" role="img" aria-label="Illustration of a three-tier afternoon tea stand with sandwiches, scones and cakes, and a teapot">
-          <ellipse cx="210" cy="408" rx="130" ry="14" fill="#e3d2b4" opacity=".55"/>
-          <!-- stand -->
-          <path d="M210 60v300" stroke="#8a6a3a" stroke-width="6" stroke-linecap="round"/>
-          <ellipse cx="210" cy="372" rx="86" ry="20" fill="#f2e3c8" stroke="#c9ab7e" stroke-width="3"/>
-          <ellipse cx="210" cy="252" rx="72" ry="17" fill="#f7ecd8" stroke="#d3b68d" stroke-width="3"/>
-          <ellipse cx="210" cy="150" rx="56" ry="14" fill="#fbf4e6" stroke="#dcc39d" stroke-width="3"/>
-          <!-- top: cakes -->
-          <g>
-            <circle cx="186" cy="132" r="13" fill="#e8a0a0"/><circle cx="186" cy="126" r="5" fill="#fdf8ec"/>
-            <circle cx="210" cy="126" r="13" fill="#d9b98c"/><path d="M199 126h22" stroke="#a9564a" stroke-width="3"/>
-            <circle cx="234" cy="132" r="13" fill="#c98a2e"/><circle cx="234" cy="126" r="4" fill="#fdf8ec"/>
-          </g>
-          <!-- middle: scones -->
-          <g>
-            <path d="M164 234c0-14 12-20 22-20s22 6 22 20z" fill="#dcbd8c" stroke="#c0a072" stroke-width="2"/>
-            <path d="M212 236c0-14 12-20 22-20s22 6 22 20z" fill="#e3c79a" stroke="#c9ab7e" stroke-width="2"/>
-            <circle cx="186" cy="220" r="3" fill="#a9564a"/><circle cx="234" cy="222" r="3" fill="#a9564a"/>
-          </g>
-          <!-- bottom: sandwiches -->
-          <g>
-            <rect x="150" y="352" width="46" height="14" rx="3" fill="#f7efdd" stroke="#d3b68d" stroke-width="2"/>
-            <rect x="150" y="360" width="46" height="6" rx="2" fill="#9fb182"/>
-            <rect x="204" y="350" width="46" height="14" rx="3" fill="#f7efdd" stroke="#d3b68d" stroke-width="2"/>
-            <rect x="204" y="358" width="46" height="6" rx="2" fill="#e2a9a2"/>
-            <rect x="258" y="352" width="42" height="14" rx="3" fill="#f7efdd" stroke="#d3b68d" stroke-width="2"/>
-            <rect x="258" y="360" width="42" height="6" rx="2" fill="#c9b06b"/>
-          </g>
-          <!-- teapot -->
-          <g>
-            <ellipse cx="352" cy="196" rx="34" ry="26" fill="#7d8a63"/>
-            <path d="M386 190c12 2 16 10 12 20" stroke="#7d8a63" stroke-width="7" fill="none" stroke-linecap="round"/>
-            <path d="M318 188c-12 1-16 8-13 16" stroke="#7d8a63" stroke-width="6" fill="none" stroke-linecap="round"/>
-            <rect x="340" y="166" width="26" height="9" rx="4" fill="#96a179"/>
-            <circle cx="353" cy="162" r="6" fill="#96a179"/>
-          </g>
-          <!-- cups -->
-          <g>
-            <path d="M60 330h44v14a20 20 0 01-20 20h-4a20 20 0 01-20-20z" fill="#fdf8ec" stroke="#c9ab7e" stroke-width="2.5"/>
-            <path d="M104 334c10 0 12 8 6 12" stroke="#c9ab7e" stroke-width="2.5" fill="none"/>
-            <ellipse cx="82" cy="330" rx="22" ry="5" fill="#c98a2e"/>
-          </g>
-        </svg>
-        <p class="art-caption">Cakes change with the week — the counter is the real menu.</p>
-      </div>
-    </div>
-  </section>
+  <section class="direction-hero" aria-labelledby="hero-title"><div class="wrap direction-layout"><div class="direction-copy"><p class="direction-location">Honeybee House · Llanishen</p><h1 id="hero-title">Tea, cake<br>and time together</h1><p class="intro">A mother-and-daughter tearoom on Station Road. Plan a catch-up, ask about afternoon tea and let the team confirm your table.</p><div class="direction-actions"><a class="btn btn-primary" href="#book">Request a table</a><a class="btn btn-ghost" href="tel:+442920755380">Call the tearoom</a></div><p class="status" id="status"><span id="status-text">See opening hours below</span></p><p class="award-note"><a href="https://oceanicawardsblog.wordpress.com/2026/03/24/winners-announced-for-the-welsh-cafe-bakery-awards-2026/" target="_blank" rel="noopener noreferrer">Tearoom of the Year 2026</a><br>Welsh Cafe &amp; Bakery Awards</p></div><div class="direction-visual"><svg viewBox="0 0 640 520" role="img" aria-label="Illustration of blue-rimmed porcelain and tea"><defs><linearGradient id="porcelain" x2=".7" y2="1"><stop stop-color="#ffffff"/><stop offset=".5" stop-color="#edf0ef"/><stop offset="1" stop-color="#c6d6dd"/></linearGradient><linearGradient id="tea" x2="0" y2="1"><stop stop-color="#8e572a"/><stop offset="1" stop-color="#bb7d36"/></linearGradient></defs><ellipse cx="325" cy="425" rx="192" ry="26" fill="#152b40" opacity=".09"/><ellipse cx="320" cy="396" rx="212" ry="56" fill="url(#porcelain)"/><ellipse cx="320" cy="392" rx="193" ry="44" fill="none" stroke="#31577e" stroke-width="5"/><path d="M451 219c115-25 108 113 7 104" fill="none" stroke="#31577e" stroke-width="24"/><path d="M170 201h291v86c0 91-62 115-144 115s-147-33-147-115z" fill="url(#porcelain)"/><path d="M175 245c40 18 228 18 279 0" stroke="#31577e" stroke-width="6" fill="none"/><ellipse cx="315" cy="204" rx="146" ry="42" fill="#fdfdf8" stroke="#31577e" stroke-width="6"/><ellipse cx="315" cy="206" rx="129" ry="30" fill="url(#tea)"/><path d="M227 210q80-28 165-2" stroke="#edc785" stroke-width="3" opacity=".45" fill="none"/><g fill="#31577e"><path d="M220 285q20-25 40 0-20 32-40 0m100 8q20-25 40 0-20 32-40 0"/><path d="M265 270v80m110-80v70" stroke="#31577e" stroke-width="2"/></g><path d="M260 146q-32-35 0-68m72 63q-32-35 0-68" stroke="#899eab" stroke-width="3" fill="none" opacity=".5"/></svg></div></div></section>
 
   <div class="facts">
     <div class="wrap">
@@ -396,7 +331,7 @@
       </div>
       <div>
         <p class="eyebrow">Our story</p>
-        <h2>A small tearoom, run by two.</h2>
+        <h2>A small tearoom, run by two</h2>
         <p>Honeybee House is a mother-and-daughter team on Station Road, in the parade of shops at the heart of Llanishen village. Plan a catch-up, ask about afternoon tea or call to check what is on the menu today.</p>
         <p>Use the request form to ask about your preferred time and dietary needs. Your table is confirmed only when the tearoom replies.</p>
         <p class="pull">A catch-up over tea.<br>A little time together.</p>
@@ -420,7 +355,7 @@
     <div class="wrap book-grid">
       <div>
         <p class="eyebrow">Book a table</p>
-        <h2>Tell us when you're coming.</h2>
+        <h2>Tell us when you're coming</h2>
         <p>Prepare a booking request in a minute. The tearoom replies to confirm your time — and for afternoon tea, to check what notice they need and what you'd like on the stand.</p>
         <p style="color:var(--ink-soft);font-size:.93rem">Open Wednesday to Saturday only. The form won't let you pick a day the tearoom is shut, which saves everyone a phone call.</p>
         <ul class="contact-list">

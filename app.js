@@ -146,14 +146,14 @@
     var copyBtn = document.getElementById('copy-ref');
     if (copyBtn) copyBtn.addEventListener('click', function () {
       if (!navigator.clipboard) return;
-      navigator.clipboard.writeText(body).then(function () { copyBtn.textContent = 'Copied'; }, function () {});
+      navigator.clipboard.writeText(body).then(function () { copyBtn.textContent = 'Request copied'; }, function () {});
     });
     var full=document.createElement('pre');full.textContent=body;full.style.cssText='white-space:pre-wrap;font:inherit;font-size:.85rem;overflow-wrap:anywhere';result.appendChild(full);
     result.scrollIntoView({ block: 'center', behavior: 'smooth' });
   }
 
   var form = document.getElementById('book-form');
-  if (form) form.addEventListener('submit', onSubmit);
+  if (form) { form.addEventListener('submit', onSubmit); form.addEventListener('input',function(){document.getElementById('book-result').replaceChildren();}); }
 
   var y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());
