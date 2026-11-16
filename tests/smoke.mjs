@@ -133,7 +133,9 @@ check('social preview and theme are consistent', () => {
   const meta = (html.match(/name="theme-color" content="([^"]+)"/) || [])[1];
   assert(manifest.theme_color === meta, 'manifest theme_color differs from meta theme-color');
   assert(manifest.background_color === meta, 'manifest background_color differs from theme');
-  return '1200x630 image; theme #' + meta.slice(1);
+  const source = read('assets/share-source.html');
+  assert(source.includes('#3c5a48') && !/#315d78|#315e7b/.test(source), 'share illustration still uses the old blue palette');
+  return '1200x630 image; theme #' + meta.slice(1) + '; green illustration';
 });
 
 check('unreferenced source modules removed', () => {
