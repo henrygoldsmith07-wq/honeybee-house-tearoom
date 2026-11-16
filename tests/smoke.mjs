@@ -47,11 +47,21 @@ check('JSON-LD parses', () => {
   return blocks.map(m => JSON.parse(m[1])['@type']).join(', ');
 });
 
-check('FAQ structured data covers six questions', () => {
+check('FAQ structured data matches the visible FAQ exactly', () => {
   const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
   const faq = blocks.find(o => o['@type'] === 'FAQPage');
-  assert(faq && faq.mainEntity.length === 6, 'expected 6 FAQ questions');
-  return faq.mainEntity.length + ' questions';
+  assert(faq, 'missing FAQPage block');
+  const faqHtml = (html.match(/<div class="faq">([\s\S]*?)<\/div>/) || [])[1] || '';
+  const visible = [...faqHtml.matchAll(/<details class="qa"><summary>([^<]*)<\/summary><p>([\s\S]*?)<\/p><\/details>/g)]
+    .map(m => ({ name: m[1], text: m[2].replace(/<[^>]*>/g, '').trim() }));
+  assert(visible.length > 0, 'no visible FAQ items parsed');
+  assert(faq.mainEntity.length === visible.length, 'FAQ count differs from visible page');
+  for (const item of visible) {
+    const match = faq.mainEntity.find(q => q.name === item.name);
+    assert(match, 'structured FAQ missing visible question: ' + item.name);
+    assert(match.acceptedAnswer.text === item.text, 'structured answer differs from visible: ' + item.name);
+  }
+  return visible.length + ' questions, text matched';
 });
 
 check('no inline style attributes', () => assert(!/\sstyle="/.test(html), 'inline style found'));
@@ -63,7 +73,8 @@ check('strict script and style sources', () => {
   assert(/style-src 'self'(?! 'unsafe-inline')/.test(csp), 'style-src allows unsafe-inline');
   assert(/img-src 'self'(?! data:)/.test(csp), 'img-src allows data: URLs');
   assert(/frame-src 'none'/.test(csp), 'external frames allowed');
-  return 'self-only scripts, styles and images; no frames';
+  assert(/object-src 'none'/.test(csp), 'object plugins allowed');
+  return 'self-only scripts, styles and images; no frames or plugins';
 });
 
 check('no dead reveal/parallax hooks', () => {
@@ -135,7 +146,11 @@ check('social preview and theme are consistent', () => {
   assert(manifest.background_color === meta, 'manifest background_color differs from theme');
   const source = read('assets/share-source.html');
   assert(source.includes('#3c5a48') && !/#315d78|#315e7b/.test(source), 'share illustration still uses the old blue palette');
-  return '1200x630 image; theme #' + meta.slice(1) + '; green illustration';
+  assert(!/blue floral cup/i.test(source), 'share illustration label still says blue');
+  for (const icon of manifest.icons) assert(existsSync(join(root, icon.src)), 'manifest icon missing: ' + icon.src);
+  const notFound = read('404.html');
+  assert(/name="theme-color" content="#f7f4eb"/.test(notFound), '404 theme-color missing');
+  return '1200x630 image; theme #' + meta.slice(1) + '; green illustration; icons resolve';
 });
 
 check('unreferenced source modules removed', () => {

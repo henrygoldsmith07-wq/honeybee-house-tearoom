@@ -37,6 +37,6 @@
  .direction-hero.type-hero .service-copy{font-size:13px;line-height:1.6}
 }
 @media(max-width:420px){.photo-hero .direction-layout,.type-hero .direction-layout{min-height:540px}.photo-hero .direction-actions,.type-hero .direction-actions{display:grid;grid-template-columns:1fr}.photo-hero .direction-actions a,.type-hero .direction-actions a{width:100%;justify-content:center}}
-@media print{.direction-hero.photo-hero,.direction-hero.type-hero{background:white!important;color:black!important;min-height:0}.hero-backdrop,.hero-wordmark,.photo-hero::after{display:none}.photo-hero .direction-copy,.type-hero .direction-copy{color:black!important}}
+@media print{.direction-hero.photo-hero,.direction-hero.type-hero{background:white!important;color:black!important;min-height:0}.hero-backdrop,.hero-wordmark,.photo-hero::after{display:none}.photo-hero .direction-copy,.type-hero .direction-copy{color:black!important}.direction-hero.photo-hero .direction-copy h1,.direction-hero.photo-hero .direction-location,.direction-hero.photo-hero .direction-copy .intro,.direction-hero.photo-hero .status,.photo-hero .status span{color:#000!important;-webkit-text-fill-color:#000!important}}
 
 @media(min-width:801px) and (max-width:1100px){.photo-hero::after{background:rgba(13,24,19,.72)}}

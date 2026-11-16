@@ -6,10 +6,10 @@ Independent zero-dependency static site for Henry Goldsmith. Open index.html via
 Forms prepare a visible request or call note. Email links open the visitor's email app; no message is automatically sent. A reference is local, not a server booking. No payments, confirmed bookings, delivery promises or invented prices.
 
 ## Before owner launch
-Confirm contact details, hours, service/menu content and accessibility needs with the owner. Replace the candidate GitHub Pages canonical/social URLs with the actual deployment URL. Search indexing is blocked by robots.txt pending owner launch approval. Remove that block and submit sitemap.xml only at approved launch. No real merchant checkout is configured.
+Confirm contact details, hours, service/menu content and accessibility needs with the owner. If the site moves off GitHub Pages to a custom domain, update the canonical/OG/Twitter/JSON-LD URLs together. Search indexing is already enabled (`robots.txt` allows all and declares `sitemap.xml`); submit the sitemap to search consoles when the owner is ready. No real merchant checkout is configured.
 
 ## Security and privacy
-No third-party scripts, fonts, trackers or card handling. Executable JavaScript is self-hosted and CSP permits only self scripts. Form input is escaped or inserted as text. Gift shortlists use localStorage; visit details stay in the current tab.
+No third-party scripts, fonts, trackers or card handling. Executable JavaScript is self-hosted and the CSP permits only self scripts, styles and images, with no frames or plugins. Form input is percent-encoded in the mailto link or inserted as text; nothing is stored in browser storage and no message is sent automatically.
 
 Prepared 15 November 2026.
 
@@ -19,13 +19,13 @@ Browser checks: 375px, 390px, 768px and 1440px widths; no horizontal overflow. F
 ## 15 November 2026: reference-led design and evidence pass
 See DESIGN.md for sources, design decisions and attribution. Live Maps and publicly accessible social details were audited; full private/social archives were not accessible. Site changes use confirmed details, original code-native illustrations and keyboard/touch interaction. No client launch or payments enabled.
 ## Final polish — 15 November 2026
-Scroll-reveal section entrances (IntersectionObserver, reduced-motion safe), pointer parallax on the hero visual (fine-pointer only), Daisy shortlist-count pop feedback, and added structured data: contactPoint, hasOfferCatalog (barbers) and FAQPage schema, plus og:locale/og:site_name/twitter parity and sentence-case ribbon copy. All zero-dependency, still no pricing or unverified claims. Verified one h1, strict script policy, no overflow at 375/768/1440/1920, and keyboard/touch flows.
+Scroll-reveal section entrances (IntersectionObserver, reduced-motion safe), pointer parallax on the hero visual (fine-pointer only), and structured data: contactPoint and FAQPage schema, plus og:locale/og:site_name/twitter parity and sentence-case ribbon copy. The reveal and parallax effects and the shortlist/barber features described in early shared-pipeline notes were never part of this site's final direction and are absent from the current code. All zero-dependency, still no pricing or unverified claims. Verified one h1, strict script policy, no overflow at 375/768/1440/1920, and keyboard/touch flows.
 
 ## Vibrancy pass — 15 November 2026
 Brand-specific vibrancy layer appended to site.css: richer gradients and section depth, gradient headline/section headings, gradient primary buttons and glowing hover/selection states. All zero-dependency; respects prefers-reduced-motion; strict CSP unchanged; one h1 retained; no unverified claims added.
 
 ## Smoke test — 16 November 2026
-Run `node tests/smoke.mjs` from the repository root. No install or dependencies. It checks one h1, unique IDs, resolved internal anchors, existing local assets, three parseable JSON-LD blocks, six FAQ entries, no inline style attributes, self-only script and style CSP sources, no dead reveal/parallax or gallery/rack hooks, balanced CSS braces, parseable loaded scripts, manifest branding and a branded self-contained 404 page. 14/14 checks passed on 16 November 2026.
+Run `node tests/smoke.mjs` from the repository root. No install or dependencies. It checks one h1, unique IDs, resolved internal anchors, existing local assets, three parseable JSON-LD blocks, FAQ data matching the visible questions and answers exactly, no inline style attributes, self-only script/style/image CSP sources with no frames or plugins, no dead reveal/parallax or gallery/rack hooks in markup or scripts, balanced CSS braces, parseable loaded scripts, manifest branding and a branded self-contained 404 page. 17/17 checks passed on 16 November 2026.
 
 ## Lighthouse — 16 November 2026
 Local static server, desktop emulation: Accessibility 100, Best Practices 100, SEO 100. No audit failures. Browser flows exercised: Tuesday requests rejected, Wednesday requests prepare an unsent email with correct details, and the photograph dialog opens, moves focus to Close and restores focus on Escape. No email, call, payment or deployment performed.

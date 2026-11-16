@@ -72,3 +72,9 @@ body{--paper:var(--base);--ink:var(--text);--muted:var(--secondary);--line:var(-
 .hint.hint-center{text-align:center;margin-top:.7rem}
 #visit.visit-section{background:var(--cream-2)}
 .hint.hint-spaced{margin-top:1rem}
+
+/* 16 Nov 2026 audit fixes: anchor landing, bottom spacing, focus consistency. */
+section:not(.direction-hero),main>section{scroll-margin-top:0}
+@media (min-width:641px) and (max-width:800px){body,body.has-bar{padding-bottom:0}}
+@media (max-width:640px){body.has-bar{padding-bottom:calc(88px + env(safe-area-inset-bottom))}}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid var(--accent);outline-offset:4px}
