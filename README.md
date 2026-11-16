@@ -27,6 +27,9 @@ Brand-specific vibrancy layer appended to site.css: richer gradients and section
 ## Smoke test — 16 November 2026
 Run `node tests/smoke.mjs` from the repository root. No install or dependencies. It checks one h1, unique IDs, resolved internal anchors, existing local assets, three parseable JSON-LD blocks, FAQ data matching the visible questions and answers exactly, no inline style attributes, self-only script/style/image CSP sources with no frames or plugins, no dead reveal/parallax or gallery/rack hooks in markup or scripts, balanced CSS braces, parseable loaded scripts, manifest branding and a branded self-contained 404 page. 17/17 checks passed on 16 November 2026.
 
+## Code and hosting hardening — 16 November 2026
+Stylesheets were pruned of rule families with no references in the HTML or JavaScript (roughly 20 KB removed), verified by identical before/after screenshots at 820px and 375px and an unchanged Lighthouse score. A `_headers` file supplies `X-Frame-Options: DENY`, `nosniff`, referrer and permissions policies on hosts that support it (Netlify/Cloudflare Pages); GitHub Pages ignores such files, so clickjacking headers require a hosting decision from the owner.
+
 ## Lighthouse — 16 November 2026
 Local static server, desktop emulation: Accessibility 100, Best Practices 100, SEO 100. No audit failures. Browser flows exercised: Tuesday requests rejected, Wednesday requests prepare an unsent email with correct details, and the photograph dialog opens, moves focus to Close and restores focus on Escape. No email, call, payment or deployment performed.
 
