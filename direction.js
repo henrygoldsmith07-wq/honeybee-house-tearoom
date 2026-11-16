@@ -1,6 +1,8 @@
 'use strict';
 const nav=document.querySelector('#main-nav'),toggle=document.querySelector('.nav-toggle');
-function closeMenu(){if(!toggle||!nav)return;toggle.setAttribute('aria-expanded','false');nav.classList.remove('nav-open');}
+function closeMenu(){if(!toggle||!nav)return;if(nav.contains(document.activeElement))toggle.focus();toggle.setAttribute('aria-expanded','false');nav.classList.remove('nav-open');}
 if(toggle&&nav){toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));nav.classList.toggle('nav-open',open);});nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){closeMenu();toggle.focus();}});matchMedia('(min-width:801px)').addEventListener('change',closeMenu);}
 const cards=[...document.querySelectorAll('[data-rack]')],names=['Birthday cards','Thank you notes','Sympathy and thinking-of-you cards'];
 cards.forEach((card,i)=>{card.addEventListener('click',()=>{cards.forEach(x=>x.setAttribute('aria-pressed',String(x===card)));document.querySelector('#rack-title').textContent=names[i];const add=document.querySelector('#rack-add');add.dataset.add=names[i];add.textContent='Add to shortlist';});card.addEventListener('keydown',e=>{if(!['ArrowRight','ArrowLeft','Home','End'].includes(e.key))return;e.preventDefault();let next=e.key==='Home'?0:e.key==='End'?cards.length-1:(i+(e.key==='ArrowRight'?1:-1)+cards.length)%cards.length;cards[next].focus();cards[next].click();});});
+
+if(toggle&&nav)document.addEventListener('click',e=>{if(toggle.getAttribute('aria-expanded')==='true'&&!nav.contains(e.target)&&!toggle.contains(e.target))closeMenu();});
