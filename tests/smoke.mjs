@@ -126,6 +126,16 @@ check('launch indexing enabled', () => {
   return 'homepage indexable, sitemap declared and consistent';
 });
 
+check('social preview and theme are consistent', () => {
+  const png = readFileSync(join(root, 'og-image.png'));
+  assert(png.readUInt32BE(16) === 1200 && png.readUInt32BE(20) === 630, 'og-image.png is not 1200x630');
+  const manifest = JSON.parse(read('site.webmanifest'));
+  const meta = (html.match(/name="theme-color" content="([^"]+)"/) || [])[1];
+  assert(manifest.theme_color === meta, 'manifest theme_color differs from meta theme-color');
+  assert(manifest.background_color === meta, 'manifest background_color differs from theme');
+  return '1200x630 image; theme #' + meta.slice(1);
+});
+
 check('unreferenced source modules removed', () => {
   for (const f of ['direction.css', 'visit-collection.css', 'visit-collection.js']) {
     assert(!existsSync(join(root, f)), f + ' still present');

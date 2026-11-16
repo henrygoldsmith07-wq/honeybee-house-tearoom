@@ -60,3 +60,6 @@ Lighthouse on the real page found four issues, fixed here: the `aria-label` on a
 
 ## Launch preparation — 16 November 2026
 With Henry's approval, the pre-launch search block was removed from the homepage and `robots.txt` now allows crawling and declares the sitemap. The canonical/social/JSON-LD URLs were left at the GitHub Pages deployment address because that is the real hosting target; a future custom domain would require updating all of them together. The 404 page keeps `noindex` as an error page should. The three unreferenced source modules — `direction.css`, `visit-collection.css` and `visit-collection.js` — were deleted by approval, reducing the repo by roughly 22 KB of dead source. Earlier notes describing them as retained are superseded by this decision.
+
+## Social preview refresh — 16 November 2026
+The shipped social card still showed an older identity ("CARDIFF WEBSITE", "Vintage Tearoom & Homemade Bakes") on a cream/gold palette. `assets/share-source.html` was changed to the current verified copy ("Honeybee House", "Tea, cake and time together", "38 Station Road · Llanishen") and the site's cream/green tokens, then rendered to `og-image.png` at 1200×630 with headless Chrome. Favicon and manifest colours were aligned with the page meta. No new business claims were introduced; all copy already appears on the site.
