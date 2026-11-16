@@ -56,3 +56,19 @@ details p{line-height:1.8}.hint,.br-meta{font-size:14px;line-height:1.7}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 
 body{--paper:var(--base);--ink:var(--text);--muted:var(--secondary);--line:var(--rule)}body.studio{--accent:#3e5d4a;--paper:var(--base);--ink:var(--text);--muted:var(--secondary);--line:var(--rule)}header.top,.direction-hero{--text:inherit;--secondary:inherit;--accent:inherit;--rule:inherit;--base:inherit;--surface:inherit}.studio header.top{--accent:inherit}.top .nav-toggle{color:var(--text)!important;border-color:var(--secondary)}.mobile .button{background:var(--accent)!important}.mobile .button.secondary{background:transparent!important}.services li h3{grid-column:2;font-size:clamp(23px,2.2vw,32px);margin:0}.services li a{grid-column:3;margin-top:0}.services li::before{grid-column:1;grid-row:1}.services li a{grid-row:1}@media(max-width:800px){.services li h3{font-size:25px}.services li a{grid-column:2;grid-row:2}.services li{grid-template-rows:auto auto}.studio .top .brand{font-family:var(--body);font-size:24px;font-weight:500}}
+
+/* 16 Nov 2026: bridge the navigation gap between the 800px mobile menu and the 900px desktop nav. */
+@media (min-width:801px) and (max-width:899px){
+  .head-cta{display:none}
+  .nav-toggle{display:inline-flex;min-height:44px;align-items:center;background:transparent;border:1px solid var(--rule);color:var(--text);border-radius:3px;padding:8px 12px;margin-left:auto;font:500 14px var(--body)}
+  .head-nav{display:none;order:9;flex-basis:100%;gap:8px;flex-wrap:wrap;padding-top:8px;border-top:1px solid var(--rule)}
+  .head-nav.nav-open{display:flex!important}
+  .head-nav a{display:block;padding:12px 16px;border-radius:3px;background:var(--surface);min-height:44px}
+}
+
+/* 16 Nov 2026: one-off inline styles moved here so style-src needs no unsafe-inline. */
+.book-note{color:var(--ink-soft);font-size:.93rem}
+.label-plain{text-transform:none;letter-spacing:0;font-weight:400}
+.hint.hint-center{text-align:center;margin-top:.7rem}
+#visit.visit-section{background:var(--cream-2)}
+.hint.hint-spaced{margin-top:1rem}

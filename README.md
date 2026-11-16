@@ -23,3 +23,9 @@ Scroll-reveal section entrances (IntersectionObserver, reduced-motion safe), poi
 
 ## Vibrancy pass — 15 November 2026
 Brand-specific vibrancy layer appended to site.css: richer gradients and section depth, gradient headline/section headings, gradient primary buttons and glowing hover/selection states. All zero-dependency; respects prefers-reduced-motion; strict CSP unchanged; one h1 retained; no unverified claims added.
+
+## Smoke test — 16 November 2026
+Run `node tests/smoke.mjs` from the repository root. No install or dependencies. It checks one h1, unique IDs, resolved internal anchors, existing local assets, three parseable JSON-LD blocks, six FAQ entries, no inline style attributes, self-only script and style CSP sources, no dead reveal/parallax or gallery/rack hooks, balanced CSS braces, parseable loaded scripts, manifest branding and a branded self-contained 404 page. 14/14 checks passed on 16 November 2026.
+
+## Lighthouse — 16 November 2026
+Local static server, desktop emulation: Accessibility 100, Best Practices 100, SEO 100. No audit failures. Browser flows exercised: Tuesday requests rejected, Wednesday requests prepare an unsent email with correct details, and the photograph dialog opens, moves focus to Close and restores focus on Escape. No email, call, payment or deployment performed.
