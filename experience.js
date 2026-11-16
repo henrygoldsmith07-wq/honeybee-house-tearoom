@@ -33,17 +33,3 @@ const status=document.querySelector('#visit-status');if(status){
 }
 })();
 
-/* final polish: reveal, parallax, keyboard-safe */
-(function(){
- var root=document.documentElement;root.classList.add('js-reveal');
- var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
- var reveal=[].slice.call(document.querySelectorAll('[data-reveal]'));
- if(reduce||!('IntersectionObserver' in window)){reveal.forEach(function(el){el.classList.add('is-in');});}
- else{var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});reveal.forEach(function(el){io.observe(el);});}
- var hero=document.querySelector('.direction-hero'),vis=document.querySelector('.direction-hero .direction-visual');
- if(hero&&vis&&!reduce&&matchMedia('(pointer:fine)').matches){
-  vis.classList.add('hero-parallax');var raf=null;
-  hero.addEventListener('pointermove',function(e){if(raf)return;raf=requestAnimationFrame(function(){var r=hero.getBoundingClientRect();var x=((e.clientX-r.left)/r.width-.5)*2,y=((e.clientY-r.top)/r.height-.5)*2;vis.style.setProperty('--px',(x*9).toFixed(2));vis.style.setProperty('--py',(y*7).toFixed(2));raf=null;});});
-  hero.addEventListener('pointerleave',function(){vis.style.setProperty('--px','0');vis.style.setProperty('--py','0');});
- }
-})();
