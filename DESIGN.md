@@ -45,3 +45,6 @@ Final checks: 16 November 2026. No horizontal overflow at 375, 768 and 1440px. M
 
 ## Premium refinement — 16 November 2026
 Preserved approved identity and section order, following Unslop by Damir Sokolovsky (CC BY 4.0). Improved service-row hierarchy, selected-service feedback, form grouping, mobile spacing, safe-area clearance, FAQ targets, focus visibility and outside-click navigation dismissal. Daisy enquiry wording describes the actual unsent handoff. Local JPEG responsive derivatives preserve original assets, native lazy loading remains enabled, and gallery enlargement uses the larger derivative. No new business claims or paid services. See QA-2026-11-16.md for actual checks.
+
+## Background-led direction — 16 November 2026
+Henry requested photographs as backgrounds. Daisy and Honeybee now use the existing responsive images as full-bleed hero backdrops, with dark readability scrims and an honest illustrative-photo caption. The image remains a native responsive img behind the content rather than a CSS download so source selection and priority are preserved. Barbers have no saved shop photography: their former boxed wordmarks now form oversized decorative backgrounds across the hero, retaining their identities without implying stock photos are their premises. No new photography, factual claims, dependencies or motion.

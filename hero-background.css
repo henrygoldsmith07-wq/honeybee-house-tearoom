@@ -1,0 +1,42 @@
+/* Background-led heroes. Henry's direction, 16 November 2026. */
+.direction-hero.photo-hero,.direction-hero.type-hero{position:relative;isolation:isolate;overflow:hidden;padding:80px 0 56px!important;min-height:720px;background:#18251f!important;color:#fff9ee}
+.photo-hero .hero-backdrop{position:absolute;inset:0;z-index:-3;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 48%;pointer-events:none}
+.photo-hero::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(13,24,19,.91) 0%,rgba(13,24,19,.82) 50%,rgba(13,24,19,.32) 80%,rgba(13,24,19,.16) 100%);pointer-events:none}
+.photo-hero .direction-layout,.type-hero .direction-layout{display:flex;align-items:center;min-height:540px;position:relative}
+.photo-hero .direction-copy,.type-hero .direction-copy{width:100%;max-width:600px;position:relative;z-index:1}
+.direction-hero.photo-hero .direction-copy h1,.direction-hero.type-hero .direction-copy h1,body.studio .direction-hero.type-hero .direction-copy h1{font-size:clamp(60px,6.5vw,100px);line-height:1.02;letter-spacing:-.045em;max-width:12ch;color:#fff9ee!important;-webkit-text-fill-color:#fff9ee!important}
+.direction-hero.photo-hero .direction-location,.direction-hero.photo-hero .direction-copy .intro,.direction-hero.photo-hero .status,.photo-hero .status span,.direction-hero.type-hero .direction-location,.direction-hero.type-hero .direction-copy .intro,.direction-hero.type-hero .service-copy{color:#fff9ee!important}
+.photo-hero .direction-copy .intro,.type-hero .direction-copy .intro{font-size:18px;line-height:1.8;max-width:42ch;margin-top:28px}
+.photo-hero .direction-actions,.type-hero .direction-actions{margin-top:32px;gap:12px}
+.direction-hero.photo-hero .direction-actions .btn-primary,.direction-hero.type-hero .direction-actions .btn-primary{background:#fff9ee!important;color:#18251f!important;border:1px solid #fff9ee!important}
+.direction-hero.photo-hero .direction-actions .btn-ghost,.direction-hero.type-hero .direction-actions .btn-ghost{background:rgba(13,24,19,.4)!important;color:#fff9ee!important;border:1px solid #d9ddd7!important}
+.photo-hero .direction-actions a:hover,.type-hero .direction-actions a:hover{filter:none;background:#e9e3d7!important;color:#18251f!important}
+.photo-hero .award-note{color:#fff9ee!important;border-color:#fff9ee!important}.photo-hero .award-note a{color:inherit}
+.photo-hero .hero-caption{position:relative;z-index:1;margin:24px 0 0 auto;max-width:44ch;font-size:12px;line-height:1.6;color:#fff9ee;background:rgba(13,24,19,.8);padding:12px 16px;align-self:end}
+.photo-hero :focus-visible,.type-hero :focus-visible{outline:3px solid #fff9ee;outline-offset:5px}
+.type-hero .hero-wordmark{position:absolute;z-index:-1;right:-1.5%;top:8%;margin:0;color:#bcc9c1;opacity:.13;pointer-events:none;user-select:none;font:400 clamp(180px,23vw,420px)/.9 'Fraunces',Georgia,serif;letter-spacing:-.07em;text-align:right}
+.type-hero .hero-wordmark span{display:block}
+.direction-hero.type-grahams{background:#1d292c!important}.type-grahams .hero-wordmark{color:#d6c49c;font-style:italic}
+.direction-hero.type-best{background:#243c30!important}.type-best .hero-wordmark{font-family:'DM Sans',sans-serif;font-weight:500;letter-spacing:-.09em;top:12%;color:#d5deca}
+.direction-hero.type-hero .service-choice button{background:rgba(0,0,0,.15)!important;color:#fff9ee!important;border-color:#cbd2ca!important}
+.direction-hero.type-hero .service-choice button[aria-pressed=true]{background:#fff9ee!important;color:#18251f!important;border-color:#fff9ee!important}
+.type-hero .hero-addressline{color:#fff9ee;position:relative;margin:32px 0 0;padding-top:20px;border-top:1px solid #ffffff59;font-size:14px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.type-hero .hero-addressline a{min-height:44px;display:inline-flex;align-items:center;color:inherit;text-underline-offset:6px}
+@media(min-width:1600px){.photo-hero .direction-layout,.type-hero .direction-layout{min-height:600px}.direction-hero.photo-hero,.direction-hero.type-hero{min-height:800px}}
+@media(max-width:800px){
+ .direction-hero.photo-hero,.direction-hero.type-hero{padding:56px 0 32px!important;min-height:0}
+ .photo-hero .direction-layout,.type-hero .direction-layout{min-height:580px;align-items:center;display:flex}
+ .direction-hero.photo-hero .direction-copy h1,.direction-hero.type-hero .direction-copy h1,body.studio .direction-hero.type-hero .direction-copy h1{font-size:clamp(48px,10.5vw,76px);max-width:13ch;line-height:1.06}
+ .photo-hero .direction-copy .intro,.type-hero .direction-copy .intro{font-size:16px;line-height:1.75;max-width:38ch;margin-top:24px}
+ .photo-hero::after{background:rgba(13,24,19,.72)}
+ .photo-hero .hero-backdrop{object-position:60% center}
+ .photo-hero .hero-caption{margin-top:32px;margin-left:0;font-size:12px;max-width:44ch;padding:12px 16px}
+ .type-hero .hero-wordmark{font-size:clamp(160px,40vw,300px);top:5%;right:-8%;opacity:.1}
+ .type-hero .hero-addressline{margin-top:24px;gap:4px 24px}
+ .photo-hero .direction-actions a,.type-hero .direction-actions a{min-height:52px}
+ .direction-hero.type-hero .service-copy{font-size:13px;line-height:1.6}
+}
+@media(max-width:420px){.photo-hero .direction-layout,.type-hero .direction-layout{min-height:540px}.photo-hero .direction-actions,.type-hero .direction-actions{display:grid;grid-template-columns:1fr}.photo-hero .direction-actions a,.type-hero .direction-actions a{width:100%;justify-content:center}}
+@media print{.direction-hero.photo-hero,.direction-hero.type-hero{background:white!important;color:black!important;min-height:0}.hero-backdrop,.hero-wordmark,.photo-hero::after{display:none}.photo-hero .direction-copy,.type-hero .direction-copy{color:black!important}}
+
+@media(min-width:801px) and (max-width:1100px){.photo-hero::after{background:rgba(13,24,19,.72)}}
