@@ -147,7 +147,14 @@ check('social preview and theme are consistent', () => {
   const source = read('assets/share-source.html');
   assert(source.includes('#3c5a48') && !/#315d78|#315e7b/.test(source), 'share illustration still uses the old blue palette');
   assert(!/blue floral cup/i.test(source), 'share illustration label still says blue');
-  for (const icon of manifest.icons) assert(existsSync(join(root, icon.src)), 'manifest icon missing: ' + icon.src);
+  for (const icon of manifest.icons) {
+    const p = join(root, icon.src);
+    assert(existsSync(p), 'manifest icon missing: ' + icon.src);
+    if (icon.type === 'image/png') {
+      const b = readFileSync(p);
+      assert(b.readUInt32BE(16) + 'x' + b.readUInt32BE(20) === icon.sizes, 'icon size mismatch: ' + icon.src);
+    }
+  }
   const notFound = read('404.html');
   assert(/name="theme-color" content="#f7f4eb"/.test(notFound), '404 theme-color missing');
   return '1200x630 image; theme #' + meta.slice(1) + '; green illustration; icons resolve';
