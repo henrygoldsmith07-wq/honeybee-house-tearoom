@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://henrygoldsmith07-wq.github.io/honeybee-house-tearoom/sitemap.xml

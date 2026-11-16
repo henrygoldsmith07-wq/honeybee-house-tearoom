@@ -114,6 +114,25 @@ check('404 page is branded and self-contained', () => {
   return 'branded, no external assets, noindex';
 });
 
+check('launch indexing enabled', () => {
+  assert(!/name="robots" content="noindex/.test(html), 'homepage still noindex');
+  const r = read('robots.txt');
+  assert(/User-agent: \*/.test(r) && /Allow: \//.test(r), 'robots.txt does not allow crawling');
+  assert(!/Disallow: \//.test(r), 'robots.txt still disallows all');
+  assert(/Sitemap: https:\/\/[^\s]+\/sitemap\.xml/.test(r), 'sitemap not declared');
+  const s = read('sitemap.xml');
+  const canonical = (html.match(/<link rel="canonical" href="([^"]+)"/) || [])[1] || '';
+  assert(s.includes(canonical), 'sitemap URL differs from canonical');
+  return 'homepage indexable, sitemap declared and consistent';
+});
+
+check('unreferenced source modules removed', () => {
+  for (const f of ['direction.css', 'visit-collection.css', 'visit-collection.js']) {
+    assert(!existsSync(join(root, f)), f + ' still present');
+  }
+  return '3 modules removed';
+});
+
 let failed = 0;
 for (const c of checks) {
   console.log((c.ok ? 'PASS ' : 'FAIL ') + c.name + (c.detail ? ' — ' + c.detail : ''));
