@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+        <circle cx="24" cy="24" r="22" fill="#fdf8ec" stroke="#e3d2b4"/>
+        <ellipse cx="24" cy="20" rx="8" ry="10" fill="#e8b95e"/>
+        <path d="M16 20h16M18 16h12M18 24h12" stroke="#362619" stroke-width="1.6"/>
+        <ellipse cx="15" cy="17" rx="4.5" ry="3" fill="#fdf8ec" stroke="#362619" stroke-width="1.2"/>
+        <ellipse cx="33" cy="17" rx="4.5" ry="3" fill="#fdf8ec" stroke="#362619" stroke-width="1.2"/>
+        <path d="M24 30v6" stroke="#362619" stroke-width="1.6"/>
+      </svg>
