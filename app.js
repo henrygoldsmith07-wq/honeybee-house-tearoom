@@ -1,4 +1,6 @@
 (function(){'use strict';
+// Defense in depth against framing on hosts that cannot send X-Frame-Options.
+try{if(window.top!==window.self)window.top.location=window.self.location;}catch(e){}
 const form=document.querySelector('#book-form'),result=document.querySelector('#book-result'),error=document.querySelector('#book-alert'),date=document.querySelector('#b-date'),hours={3:[555,975],4:[555,975],5:[555,975],6:[555,975]},days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const now=SiteUX.london();date.min=SiteUX.iso(now);const max=new Date(now);max.setDate(max.getDate()+120);date.max=SiteUX.iso(max);
 function fail(message,field){error.textContent=message;error.hidden=false;if(field){field.setAttribute('aria-invalid','true');field.focus();}else error.focus();}

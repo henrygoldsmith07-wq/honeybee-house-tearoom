@@ -160,6 +160,13 @@ check('social preview and theme are consistent', () => {
   return '1200x630 image; theme #' + meta.slice(1) + '; green illustration; icons resolve';
 });
 
+check('framing defence present', () => {
+  const guard = /window\.top!==window\.self/;
+  assert(guard.test(read('app.js')), 'app.js missing frame guard');
+  assert(guard.test(read('404.html')), '404.html missing frame guard');
+  return 'client-side guard in both pages';
+});
+
 check('unreferenced source modules removed', () => {
   for (const f of ['direction.css', 'visit-collection.css', 'visit-collection.js']) {
     assert(!existsSync(join(root, f)), f + ' still present');
