@@ -1,3 +1,28 @@
-/* Background-led heroes. Henry's direction,16 November 2026. */
-.direction-hero.photo-hero {position:relative;isolation:isolate;overflow:hidden;padding:80px 0 56px!important;min-height:720px;background:#18251f!important;color:#fff9ee}.photo-hero .hero-backdrop {position:absolute;inset:0;z-index:-3;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 48%;pointer-events:none}.photo-hero::after {content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(13,24,19,.91) 0%,rgba(13,24,19,.82) 50%,rgba(13,24,19,.32) 80%,rgba(13,24,19,.16) 100%);pointer-events:none}.photo-hero .direction-layout {display:flex;align-items:center;min-height:540px;position:relative}.photo-hero .direction-copy {width:100%;max-width:600px;position:relative;z-index:1}.direction-hero.photo-hero .direction-copy h1 {font-size:clamp(60px,6.5vw,100px);line-height:1.02;letter-spacing:-.045em;max-width:12ch;color:#fff9ee!important;-webkit-text-fill-color:#fff9ee!important}.direction-hero.photo-hero .direction-location,.direction-hero.photo-hero .direction-copy .intro,.direction-hero.photo-hero .status,.photo-hero .status span {color:#fff9ee!important}.photo-hero .direction-copy .intro {font-size:18px;line-height:1.8;max-width:42ch;margin-top:28px}.photo-hero .direction-actions {margin-top:32px;gap:12px}.direction-hero.photo-hero .direction-actions .btn-primary {background:#fff9ee!important;color:#18251f!important;border:1px solid #fff9ee!important}.direction-hero.photo-hero .direction-actions .btn-ghost {background:rgba(13,24,19,.4)!important;color:#fff9ee!important;border:1px solid #d9ddd7!important}.photo-hero .direction-actions a:hover {filter:none;background:#e9e3d7!important;color:#18251f!important}.photo-hero .award-note {color:#fff9ee!important;border-color:#fff9ee!important}.photo-hero .award-note a {color:inherit}.photo-hero .hero-caption {position:relative;z-index:1;margin:24px 0 0 auto;max-width:44ch;font-size:12px;line-height:1.6;color:#fff9ee;background:rgba(13,24,19,.8);padding:12px 16px;align-self:end}.photo-hero :focus-visible {outline:3px solid #fff9ee;outline-offset:5px}@media(min-width:1600px) {.photo-hero .direction-layout {min-height:600px}.direction-hero.photo-hero {min-height:800px}}@media(max-width:800px) {.direction-hero.photo-hero {padding:56px 0 32px!important;min-height:0}.photo-hero .direction-layout {min-height:580px;align-items:center;display:flex}.direction-hero.photo-hero .direction-copy h1 {font-size:clamp(48px,10.5vw,76px);max-width:13ch;line-height:1.06}.photo-hero .direction-copy .intro {font-size:16px;line-height:1.75;max-width:38ch;margin-top:24px}.photo-hero::after {background:rgba(13,24,19,.72)}.photo-hero .hero-backdrop {object-position:60% center}.photo-hero .hero-caption {margin-top:32px;margin-left:0;font-size:12px;max-width:44ch;padding:12px 16px}.photo-hero .direction-actions a {min-height:52px}
-}@media(max-width:420px) {.photo-hero .direction-layout {min-height:540px}.photo-hero .direction-actions {display:grid;grid-template-columns:1fr}.photo-hero .direction-actions a {width:100%;justify-content:center}}@media print {.direction-hero.photo-hero {background:white!important;color:black!important;min-height:0}.hero-backdrop,.photo-hero::after {display:none}.photo-hero .direction-copy {color:black!important}.direction-hero.photo-hero .direction-copy h1,.direction-hero.photo-hero .direction-location,.direction-hero.photo-hero .direction-copy .intro,.direction-hero.photo-hero .status,.photo-hero .status span {color:#000!important;-webkit-text-fill-color:#000!important}}@media(min-width:801px) and (max-width:1100px) {.photo-hero::after {background:rgba(13,24,19,.72)}}
+/* Ledge hero: the daylight cup holds the field; the head and action rest at its base. */
+.direction-hero.photo-hero { padding: 0 0 var(--space-xl); background: var(--color-paper); }
+.hero-backdrop { width: 100%; height: clamp(300px, 42dvh, 500px); object-fit: cover; object-position: 50% 44%; border-radius: 0; }
+.direction-layout { display: grid; grid-template-columns: 8fr 4fr; gap: var(--gap-columns); align-items: end; padding-top: var(--space-xl); }
+.direction-copy { grid-column: 1 / 9; min-width: 0; }
+.direction-copy h1 { max-width: 16ch; }
+.intro { max-width: 46ch; margin-top: var(--space-md); }
+.direction-actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-lg); }
+.status { margin-top: var(--space-lg); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-size: var(--text-sm); color: var(--color-muted); }
+.hero-caption { max-width: 60ch; margin-top: var(--space-lg); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-size: var(--text-xs); color: var(--color-muted); }
+
+@media (max-width: 60rem) {
+  .hero-backdrop { height: clamp(260px, 38dvh, 380px); object-position: 60% 44%; }
+  .direction-layout { grid-template-columns: minmax(0, 1fr); padding-top: var(--space-lg); }
+  .direction-copy { grid-column: 1 / -1; }
+  .direction-copy h1 { max-width: 14ch; }
+}
+@media (max-width: 40rem) {
+  .hero-backdrop { height: clamp(220px, 34dvh, 320px); }
+  .direction-copy h1 { max-width: none; font-size: clamp(2rem, 9vw, 3rem); }
+  .direction-actions { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .direction-actions .btn { width: 100%; }
+  .status { margin-top: var(--space-md); }
+}
+@media print {
+  .hero-backdrop { display: none; }
+  .direction-hero.photo-hero { padding: 0; }
+}

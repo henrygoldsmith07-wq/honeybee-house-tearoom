@@ -1,12 +1,33 @@
-/* Refinement,16 November: legible details,measured spacing,touch and keyboard. */
-html {scroll-padding-top:104px}.direction-layout {gap:clamp(32px,4vw,64px)}.direction-copy .intro {max-width:42ch}.direction-location {margin-bottom:24px}.direction-actions {gap:12px}.direction-actions a {min-height:52px}.site-head .brand-name {color:var(--text)}.eyebrow,.label {letter-spacing:0;text-transform:none;font-weight:500}.section-head {gap:32px}.section-head p {line-height:1.75}input,textarea,select {border-radius:3px!important;min-height:48px}input[aria-invalid=true],textarea[aria-invalid=true] {border-color:#a22525;outline-color:#a22525}summary {min-height:48px;display:list-item;align-content:center;padding-block:8px;font-weight:500}details p {line-height:1.8}.hint,.br-meta {font-size:14px;line-height:1.7}.photo-zoom img {background:var(--rule)}.image-viewer {overscroll-behavior:contain}.image-viewer:open {display:block}.image-viewer img {background:none}.image-viewer .viewer-controls {flex-wrap:wrap}.image-viewer button:focus-visible {outline-color:var(--accent)}:focus-visible {outline:3px solid var(--accent);outline-offset:4px}.mobile,.mobile-bar {padding-bottom:max(12px,env(safe-area-inset-bottom))}@media(max-width:800px) {html {scroll-padding-top:24px}.wrap {width:calc(100% - 40px)}.direction-hero {padding:40px 0 48px}.direction-copy h1 {font-size:clamp(44px,10vw,64px);line-height:1.08}.direction-layout {gap:32px}.direction-copy .intro {line-height:1.75}.direction-actions {display:flex;flex-wrap:wrap}.direction-location {margin-bottom:20px}.section-head {gap:16px}.viewer-controls {gap:8px}.viewer-controls button {padding:12px}body {padding-bottom:calc(88px + env(safe-area-inset-bottom))}
-}@media(max-width:360px) {.direction-actions a {width:100%}}@media(prefers-reduced-motion:reduce) {html {scroll-behavior:auto}*,*::before,*::after {animation:none!important;transition:none!important}}body {--paper:var(--base);--ink:var(--text);--muted:var(--secondary);--line:var(--rule)}.direction-hero {--text:inherit;--secondary:inherit;--accent:inherit;--rule:inherit;--base:inherit;--surface:inherit}.mobile .button {background:var(--accent)!important}.mobile .button.secondary {background:transparent!important}/* 16 Nov 2026: bridge the navigation gap between the 800px mobile menu and the 900px desktop nav. */
-@media (min-width:801px) and (max-width:899px) {
-  .head-cta{display:none}
-  .nav-toggle{display:inline-flex;min-height:44px;align-items:center;background:transparent;border:1px solid var(--rule);color:var(--text);border-radius:3px;padding:8px 12px;margin-left:auto;font:500 14px var(--body)}
-  .head-nav{display:none;order:9;flex-basis:100%;gap:8px;flex-wrap:wrap;padding-top:8px;border-top:1px solid var(--rule)}
-  .head-nav.nav-open{display:flex!important}
-  .head-nav a{display:block;padding:12px 16px;border-radius:3px;background:var(--surface);min-height:44px}
-}/* 16 Nov 2026: one-off inline styles moved here so style-src needs no unsafe-inline. */
-.book-note {color:var(--ink-soft);font-size:.93rem}.label-plain {text-transform:none;letter-spacing:0;font-weight:400}.hint.hint-center {text-align:center;margin-top:.7rem}#visit.visit-section {background:var(--cream-2)}.hint.hint-spaced {margin-top:1rem}/* 16 Nov 2026 audit fixes: anchor landing,bottom spacing,focus consistency. */
-section:not(.direction-hero),main>section {scroll-margin-top:0}@media (min-width:641px) and (max-width:800px) {body,body.has-bar {padding-bottom:0}}@media (max-width:640px) {body.has-bar {padding-bottom:calc(88px + env(safe-area-inset-bottom))}}.field input:focus,.field select:focus,.field textarea:focus {outline:3px solid var(--accent);outline-offset:4px}
+/* Navigation under 60rem, touch targets and print. */
+@media (max-width: 60rem) {
+  .site-head .wrap { flex-wrap: wrap; gap: var(--space-md); min-height: 64px; }
+  .head-nav { display: none; order: 3; flex-basis: 100%; margin-left: 0; flex-wrap: wrap; gap: var(--space-xs); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); }
+  .head-nav.nav-open { display: flex; }
+  .head-nav a { display: block; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-input); background: var(--color-paper-2); }
+  .nav-toggle { display: inline-flex; align-items: center; }
+  .head-cta { display: none; }
+  .facts ul { grid-template-columns: minmax(0, 1fr); }
+  .story-body, .visit-grid, .book-grid { grid-template-columns: minmax(0, 1fr); }
+  .book-grid { gap: var(--space-xl); }
+  .foot-grid { grid-template-columns: minmax(0, 1fr); }
+  .mobile-bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-sm); position: fixed; inset-inline: 0; bottom: 0; z-index: var(--z-sticky); padding: var(--space-sm) var(--space-md) max(var(--space-sm), env(safe-area-inset-bottom)); background: color-mix(in oklab, var(--color-paper) 96%, transparent); border-top: var(--rule-hair) solid var(--color-rule); }
+  .mobile-bar a { display: flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 52px; padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-pill); font-size: var(--text-sm); font-weight: 500; text-decoration: none; white-space: nowrap; }
+  .mb-primary { background: var(--color-accent); color: var(--color-accent-ink); }
+  .mb-secondary { background: transparent; color: var(--color-ink); border: var(--rule-hair) solid var(--color-rule-2); }
+  body.has-bar { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
+}
+@media (max-width: 40rem) {
+  .field-row { grid-template-columns: minmax(0, 1fr); }
+  .coffee-grid { grid-template-columns: minmax(0, 1fr); }
+  .coffee-grid figure:first-child { grid-column: auto; }
+  .menu-block { grid-template-columns: minmax(0, 1fr); gap: var(--space-xs); }
+}
+@media print {
+  .site-head, .mobile-bar, .form-card, .direction-actions, .socials { display: none !important; }
+  body { background: var(--color-paper); color: var(--color-ink); font-size: 12pt; }
+  .menu { background: var(--color-paper); }
+  .menu h2, .menu h3, .menu-block p, .menu-note { color: var(--color-ink); }
+  footer { background: var(--color-paper); color: var(--color-ink); }
+  footer p, footer a, footer h3, .foot-brand, .foot-note, .award-note { color: var(--color-ink); }
+  .panel { padding: 0; }
+}
