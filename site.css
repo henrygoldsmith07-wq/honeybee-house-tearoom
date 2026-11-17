@@ -21,6 +21,10 @@
 .head-nav a { padding-block: var(--space-xs); font-size: var(--text-sm); color: var(--color-ink-2); text-decoration: none; white-space: nowrap; }
 .head-nav a:hover, .head-nav a[aria-current="location"] { color: var(--color-accent); text-decoration: underline; text-underline-offset: 6px; }
 .nav-toggle { display: none; margin-left: auto; min-height: 44px; padding: var(--space-xs) var(--space-md); border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-pill); background: transparent; color: var(--color-ink); cursor: pointer; }
+.head-call { font-size: var(--text-sm); color: var(--color-ink); text-decoration: none; white-space: nowrap; }
+.head-call:hover { color: var(--color-accent); text-decoration: underline; text-underline-offset: 6px; }
+.head-email { font-size: var(--text-sm); color: var(--color-ink); text-decoration: none; white-space: nowrap; }
+.head-email:hover { color: var(--color-accent); text-decoration: underline; text-underline-offset: 6px; }
 .head-cta { margin-left: var(--space-md); }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 52px; padding: var(--space-sm) var(--space-xl); border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-pill); background: transparent; color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
@@ -63,6 +67,8 @@
 .menu h2, .menu h3 { color: var(--color-field-ink); }
 .menu .section-head { margin-bottom: var(--space-2xl); }
 .menu .section-head p { max-width: 60ch; color: var(--color-accent-2); }
+.menu-book { margin-top: var(--space-lg); color: var(--color-field-ink); border-color: var(--color-accent-2); }
+.menu-book:hover { background: var(--color-accent-2); color: var(--color-field); border-color: var(--color-accent-2); }
 .menu-grid { display: grid; grid-template-columns: minmax(0, 1fr); }
 .menu-block { display: grid; grid-template-columns: 5fr 7fr; gap: var(--gap-columns); align-items: baseline; padding-block: var(--space-lg); border-top: var(--rule-hair) solid color-mix(in oklab, var(--color-field-ink) 28%, transparent); }
 .menu-block:last-of-type { border-bottom: var(--rule-hair) solid color-mix(in oklab, var(--color-field-ink) 28%, transparent); }
@@ -99,6 +105,7 @@
 .field input[aria-invalid="true"], .field select[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: var(--color-error); }
 .hint { margin-top: var(--space-xs); font-size: var(--text-sm); color: var(--color-muted); }
 .hint-center { margin-top: var(--space-md); text-align: center; }
+.privacy-note { margin-top: var(--space-sm); font-size: var(--text-xs); color: var(--color-muted); text-align: center; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .booking-summary { margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-card); background: var(--color-paper); border-top: var(--rule-hair) solid var(--color-rule); font-size: var(--text-sm); color: var(--color-ink-2); }
 .alert { margin-top: var(--space-md); padding: var(--space-sm) var(--space-md); border: var(--rule-hair) solid var(--color-error); border-radius: var(--radius-input); background: color-mix(in oklab, var(--color-error) 8%, var(--color-paper)); color: var(--color-error); font-size: var(--text-sm); }

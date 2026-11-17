@@ -5,7 +5,7 @@
   .head-nav.nav-open { display: flex; }
   .head-nav a { display: block; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-input); background: var(--color-paper-2); }
   .nav-toggle { display: inline-flex; align-items: center; }
-  .head-cta { display: none; }
+  .head-cta, .head-call, .head-email { display: none; }
   .facts ul { grid-template-columns: minmax(0, 1fr); }
   .story-body, .visit-grid, .book-grid { grid-template-columns: minmax(0, 1fr); }
   .book-grid { gap: var(--space-xl); }

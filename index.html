@@ -63,6 +63,8 @@
       <a href="#visit">Visit</a>
     </nav><button type="button" class="nav-toggle" aria-controls="main-nav" aria-expanded="false">Menu</button>
 
+    <a class="head-call" href="tel:+442920755380">029 2075 5380</a>
+    <a class="head-email" href="mailto:hbhtearoom@gmail.com">Email</a>
     <a class="btn btn-primary head-cta" href="#book">Request a table</a>
   </div>
 </header>
@@ -98,6 +100,7 @@
       <div class="section-head">
         <h2>What’s on the table</h2>
         <p>A guide to what the kitchen does rather than a live price list. The board in the shop is the authority, and the cakes change with the week.</p>
+        <a class="btn btn-outline menu-book" href="#book">Request a table</a>
       </div>
 
       <div class="menu-grid"><div class="menu-block"><h3>A table for tea</h3><p>Ask about afternoon tea, group size and how far ahead to book.</p></div><div class="menu-block"><h3>Something to eat</h3><p>Call for the current menu, prices and daily availability.</p></div><div class="menu-block"><h3>A special occasion</h3><p>Tell the tearoom your date and party size when you enquire.</p></div><div class="menu-block"><h3>Dietary requirements</h3><p>Ask the team about ingredients and allergens before ordering.</p></div></div><p class="menu-note">Prices, allergens and today’s specials are confirmed in the shop or on <a href="tel:+442920755380">029 2075 5380</a>.</p>
@@ -171,6 +174,12 @@
           </div>
 
           <div class="field">
+            <label for="b-email">Email</label>
+            <input type="email" id="b-email" name="email" autocomplete="email" required>
+            <p class="hint">The tearoom replies here to confirm.</p>
+          </div>
+
+          <div class="field">
             <label for="b-notes">Dietary needs or anything else <span class="label-plain">(optional)</span></label>
             <textarea maxlength="1000" id="b-notes" name="notes" rows="2" placeholder="Dietary questions, access needs or an occasion"></textarea>
           </div>
@@ -183,6 +192,7 @@
           <div class="booking-summary" id="booking-summary" aria-live="polite">Choose your date, time and party size to prepare a request.</div><p class="alert" id="book-alert" role="alert" tabindex="-1" hidden></p>
           <button class="btn btn-primary btn-block" type="submit">Request this table</button>
           <p class="hint hint-center">Prepare a request, then send it using your email app. The tearoom confirms availability.</p>
+          <p class="privacy-note">This request is prepared on your device. Nothing is sent until you open your email app, and the site stores no booking details.</p>
         </form>
         <div id="book-result" aria-live="polite"></div>
       </div>
@@ -276,6 +286,7 @@
     </div>
     <div class="foot-note">
       <span>&copy; <span id="year">2026</span> Honeybee House Tearoom, 38 Station Road, Llanishen, Cardiff CF14 5LT</span>
+      <span>No tracking. Keyboard accessible, with reduced motion respected.</span>
     </div>
   </div>
 </footer>
