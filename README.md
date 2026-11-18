@@ -2,6 +2,14 @@
 
 Independent zero-dependency static site for Henry Goldsmith. Open index.html via any static server. No build or paid services required.
 
+## Current state — 17 November 2026
+
+The dated sections below are a history of the work, not a description of the shipped site. The current visual system is the Hallmark Garden redesign: `tokens.css` and `base.css` hold the colour, type and spacing tokens and base rules, with `site.css`, `refinement.css`, `finishing.css` and `hero-background.css` carrying the composition. The faces are self-hosted Fraunces and DM Sans standing in for the theme's Vollkorn and Hanken. There are no gradients, scroll reveals or parallax; the earlier vibrancy and polish notes are superseded. The social card `og-image.png` is a 1200x630 honeycomb-lattice artwork of 54,808 bytes generated from `assets/share-source.html`, with its visual philosophy in `assets/CANVAS-PHILOSOPHY.md`; the older tea-set illustration note is superseded.
+
+The booking form collects date, time, party size, visit type, name, phone and email. It prepares an unsent email in the visitor's own mail app and states plainly that nothing is sent until they open it. The header carries phone and email links on desktop, the menu carries a booking link, and the footer states that the site does no tracking and respects reduced motion.
+
+Verified on 17 November: `node tests/smoke.mjs` 18/18; Hallmark static lint 0 FAIL and 0 WARN with 12/12 links, 8/8 original fields and 21/21 script hooks preserved; browser checks at 320, 375, 600, 1280, 1440 and 1920px with no horizontal overflow, and working menu, gallery and booking flows. Not checked: live phone ownership, owner sign-off, Safari/Firefox, formal WCAG audit or the live GitHub Pages rendering.
+
 ## Functional scope
 Forms prepare a visible request or call note. Email links open the visitor's email app; no message is automatically sent. A reference is local, not a server booking. No payments, confirmed bookings, delivery promises or invented prices.
 
